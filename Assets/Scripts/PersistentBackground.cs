@@ -8,6 +8,7 @@ public class PersistentBackground : MonoBehaviour
 
     void Update()
     {
+        // each frame, move the background object to the same position as this object
         backgroundObject.transform.position = new Vector2(transform.position.x, transform.position.y);
     }
 }

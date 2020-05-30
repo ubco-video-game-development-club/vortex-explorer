@@ -14,13 +14,11 @@ public class CameraFollow : MonoBehaviour
     private Player player;
     private Vector2 currentVelocity;
 
-    void Start()
-    {
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         // get the player's x position value
         float playerX = player.transform.position.x;
 
