@@ -1,0 +1,1244 @@
+fileFormatVersion: 2
+guid: 5c10774b84e0aa34a941c2d000a47d13
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6225150111329163593
+    second: VortexSheet_0
+  - first:
+      213: 4003499143144167428
+    second: VortexSheet_1
+  - first:
+      213: -7726731242781746976
+    second: VortexSheet_2
+  - first:
+      213: 7822976702578004456
+    second: VortexSheet_3
+  - first:
+      213: -1685608461707655968
+    second: VortexSheet_4
+  - first:
+      213: -2859510015340137034
+    second: VortexSheet_5
+  - first:
+      213: -1996931794677172953
+    second: VortexSheet_6
+  - first:
+      213: 8064552353648814518
+    second: VortexSheet_7
+  - first:
+      213: -6033961111285688057
+    second: VortexSheet_8
+  - first:
+      213: -4578009541895562240
+    second: VortexSheet_9
+  - first:
+      213: 8132334004200111213
+    second: VortexSheet_10
+  - first:
+      213: 9026028733215351222
+    second: VortexSheet_11
+  - first:
+      213: 6261089191148365215
+    second: VortexSheet_12
+  - first:
+      213: 4611428315444782943
+    second: VortexSheet_13
+  - first:
+      213: -627798299930629159
+    second: VortexSheet_14
+  - first:
+      213: -6275252419435766379
+    second: VortexSheet_15
+  - first:
+      213: -2671719140025160284
+    second: VortexSheet_16
+  - first:
+      213: -1634489861023205502
+    second: VortexSheet_17
+  - first:
+      213: 4410347733025139135
+    second: VortexSheet_18
+  - first:
+      213: 2640739303593141899
+    second: VortexSheet_19
+  - first:
+      213: 6385726739448623278
+    second: VortexSheet_20
+  - first:
+      213: -7023014319242438934
+    second: VortexSheet_21
+  - first:
+      213: -4428352708738231443
+    second: VortexSheet_22
+  - first:
+      213: 9102233134084170435
+    second: VortexSheet_23
+  - first:
+      213: 8534615393597628734
+    second: VortexSheet_24
+  - first:
+      213: -7041177195530144841
+    second: VortexSheet_25
+  - first:
+      213: 1103855012197374922
+    second: VortexSheet_26
+  - first:
+      213: -4003652874815316413
+    second: VortexSheet_27
+  - first:
+      213: 1838252296660403383
+    second: VortexSheet_28
+  - first:
+      213: -1912040667801517445
+    second: VortexSheet_29
+  - first:
+      213: 3004822592419483672
+    second: VortexSheet_30
+  - first:
+      213: 6916065526093378564
+    second: VortexSheet_31
+  - first:
+      213: 869155851972583141
+    second: VortexSheet_32
+  - first:
+      213: 2173167866514892313
+    second: VortexSheet_33
+  - first:
+      213: -5261972198508768817
+    second: VortexSheet_34
+  - first:
+      213: 1308081989212317659
+    second: VortexSheet_35
+  - first:
+      213: -3576628009202027462
+    second: VortexSheet_36
+  - first:
+      213: 2093544620308816989
+    second: VortexSheet_37
+  - first:
+      213: 8523553338098803436
+    second: VortexSheet_38
+  - first:
+      213: -3276466172521344098
+    second: VortexSheet_39
+  - first:
+      213: -320453809344066250
+    second: VortexSheet_40
+  - first:
+      213: 3330684141717723596
+    second: VortexSheet_41
+  - first:
+      213: -991200384762505109
+    second: VortexSheet_42
+  - first:
+      213: -7681298908407102120
+    second: VortexSheet_43
+  - first:
+      213: -3102866451723437862
+    second: VortexSheet_44
+  - first:
+      213: -8313037459528298662
+    second: VortexSheet_45
+  - first:
+      213: -7600477249260806023
+    second: VortexSheet_46
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 292
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VortexSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6edbcb4f2db99a0800000000000000
+      internalID: -6225150111329163593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40850bd52494f8730800000000000000
+      internalID: 4003499143144167428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_2
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8d4176fd225c490800000000000000
+      internalID: -7726731242781746976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_3
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e19153fcdbc09c60800000000000000
+      internalID: 7822976702578004456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4c589e8048b98e0800000000000000
+      internalID: -1685608461707655968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5baf79acaf058d0800000000000000
+      internalID: -2859510015340137034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 1812
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7257599ec197944e0800000000000000
+      internalID: -1996931794677172953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b927c743ab0bef60800000000000000
+      internalID: 8064552353648814518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_8
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7099b4da650134ca0800000000000000
+      internalID: -6033961111285688057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_9
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c57f4b394a770c0800000000000000
+      internalID: -4578009541895562240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_10
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c7d2b90badbd070800000000000000
+      internalID: 8132334004200111213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b125c79f45e24d70800000000000000
+      internalID: 9026028733215351222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95af69527bd3e650800000000000000
+      internalID: 6261089191148365215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 1510
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57a349de951fff30800000000000000
+      internalID: 4611428315444782943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db6a0eb5cc9947f0800000000000000
+      internalID: -627798299930629159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_15
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59dde971c23d9e8a0800000000000000
+      internalID: -6275252419435766379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_16
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad2037f8952cead0800000000000000
+      internalID: -2671719140025160284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_17
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287fbbc91202159e0800000000000000
+      internalID: -1634489861023205502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9a9ea65e3b43d30800000000000000
+      internalID: 4410347733025139135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86e417c76ac5a420800000000000000
+      internalID: 2640739303593141899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 1208
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea07c81f2a8ae9850800000000000000
+      internalID: 6385726739448623278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae69219afad398e90800000000000000
+      internalID: -7023014319242438934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_22
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63d48f7ca45b82c0800000000000000
+      internalID: -4428352708738231443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_23
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2a0eb4fc0a15e70800000000000000
+      internalID: 9102233134084170435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_24
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31a7fd6b7b017670800000000000000
+      internalID: 8534615393597628734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b338db75a6b84e90800000000000000
+      internalID: -7041177195530144841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb1f8df84ea15f00800000000000000
+      internalID: 1103855012197374922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 906
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e59a03cea2078c0800000000000000
+      internalID: -4003652874815316413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b44dfd69b8c28910800000000000000
+      internalID: 1838252296660403383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_29
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72079f94211775e0800000000000000
+      internalID: -1912040667801517445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_30
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8105b324a3643b920800000000000000
+      internalID: 3004822592419483672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_31
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404fe1ef3fccaff50800000000000000
+      internalID: 6916065526093378564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee174374acdf0c00800000000000000
+      internalID: 869155851972583141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916e9e029a4a82e10800000000000000
+      internalID: 2173167866514892313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 604
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc157e12a28b9f6b0800000000000000
+      internalID: -5261972198508768817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7261083ad372210800000000000000
+      internalID: 1308081989212317659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_36
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34fcc186c34d5ec0800000000000000
+      internalID: -3576628009202027462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_37
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54efe67db3cd0d10800000000000000
+      internalID: 2093544620308816989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_38
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2697de99eb94670800000000000000
+      internalID: 8523553338098803436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9318442067a782d0800000000000000
+      internalID: -3276466172521344098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_40
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d402f45f48d8bf0800000000000000
+      internalID: -320453809344066250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_41
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 302
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc99c168497f83e20800000000000000
+      internalID: 3330684141717723596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68100d608c8e32f0800000000000000
+      internalID: -991200384762505109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_43
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8558cce075b866590800000000000000
+      internalID: -7681298908407102120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_44
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad83c8fd66760f4d0800000000000000
+      internalID: -3102866451723437862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_45
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 0
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fcc44997822ac80800000000000000
+      internalID: -8313037459528298662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VortexSheet_46
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9702f5af53ea58690800000000000000
+      internalID: -7600477249260806023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
