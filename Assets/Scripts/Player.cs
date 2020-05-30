@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 0.001f;
-    public float deceleration = 0.0001f;
-    public float hitPoints = 100f;
-    public float maxSpeed = 0.001f;
-    public float horizontalSpeed = 0;
-    public float verticalSpeed = 0;
+    public double moveSpeed = 0.001;
+    public double deceleration = 0.0001;
+    public double hitPoints = 100;
+    public double maxSpeed = 0.001;
+    public double horizontalSpeed = 0;
+    public double verticalSpeed = 0;
+    public int frameCounter = 0;
  
     // Start is called before the first frame update
     void Start()
@@ -20,42 +21,45 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        frameCounter++;
+        if (frameCounter % 3 == 0)
         {
+            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            {
 
-            // convert user input into world movement
-            horizontalSpeed += Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-            verticalSpeed += Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
-            
-            
-        }
-        if (horizontalSpeed > maxSpeed)
-        {
-            horizontalSpeed = maxSpeed;
-        }
-        else if (horizontalSpeed < 0 - maxSpeed)
-        {
-            horizontalSpeed = 0 - maxSpeed;
-        }
-        if (verticalSpeed > maxSpeed)
-        {
-            verticalSpeed = maxSpeed;
-        }
-        else if (verticalSpeed < 0 - maxSpeed)
-        {
-            verticalSpeed = 0 - maxSpeed;
-        }
-        horizontalSpeed += (0f - horizontalSpeed) * 0.02f;
-        verticalSpeed += (0f - verticalSpeed) * 0.02f;
+                // convert user input into world movement
+                horizontalSpeed += Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
+                verticalSpeed += Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
 
-        float horizontalMovement = horizontalSpeed;
-        float verticalMovement = verticalSpeed;
 
-        //assign movement to a single vector3
-        Vector3 directionOfMovement = new Vector3(horizontalMovement, verticalMovement, 0);
+            }
+            if (horizontalSpeed > maxSpeed)
+            {
+                horizontalSpeed = maxSpeed;
+            }
+            else if (horizontalSpeed < 0 - maxSpeed)
+            {
+                horizontalSpeed = 0 - maxSpeed;
+            }
+            if (verticalSpeed > maxSpeed)
+            {
+                verticalSpeed = maxSpeed;
+            }
+            else if (verticalSpeed < 0 - maxSpeed)
+            {
+                verticalSpeed = 0 - maxSpeed;
+            }
+            horizontalSpeed += (0 - horizontalSpeed) * 0.02;
+            verticalSpeed += (0 - verticalSpeed) * 0.02;
 
-        // apply movement to player's transform
-        gameObject.transform.Translate(directionOfMovement);
+            float horizontalMovement = (float)horizontalSpeed;
+            float verticalMovement = (float)verticalSpeed;
+
+            //assign movement to a single vector3
+            Vector3 directionOfMovement = new Vector3(horizontalMovement, verticalMovement, 0);
+
+            // apply movement to player's transform
+            gameObject.transform.Translate(directionOfMovement);
+        }
     }
 }
