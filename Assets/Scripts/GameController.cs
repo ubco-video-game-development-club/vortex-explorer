@@ -37,11 +37,18 @@ public class GameController : MonoBehaviour
     public Color vortexRegularIndicatorColor;
     [Tooltip("The color of the indicator when the vortex radius is greater than the crush radius threshold.")]
     public Color vortexCrushIndicatorColor;
+    public Asteroids asteroidsPrefab;
+    public int asteroidSpawnFrequency = 200;
+    public int asteroidSpawnCounter = 0;
 
     private bool canSpawnVortex;
+    private bool canSpawnAsteroids;
     private bool isBuildingVortex;
     private float vortexScaleProgress;
     private SpriteRenderer vortexIndicator;
+
+    public float minVortexPower = 1f;
+    public float maxVortexPower = 3f;
 
     void Start() {
         // spawn the vortex indicator and disable it
@@ -49,6 +56,7 @@ public class GameController : MonoBehaviour
         vortexIndicator.enabled = false;
 
         canSpawnVortex = true;
+        canSpawnAsteroids = true;
     }
 
     void Update() {
@@ -131,6 +139,14 @@ public class GameController : MonoBehaviour
 
             // reset the scale progress
             vortexScaleProgress = 0;
+        }
+
+        //SpawnAsteroids
+        asteroidSpawnCounter++;
+        if (asteroidSpawnCounter % asteroidSpawnFrequency == 0) {
+            //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            Asteroids asteroid = Instantiate(asteroidsPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            asteroid.transform.position = new Vector3(asteroid.transform.position.x+20, asteroid.transform.position.y, 0); 
         }
     }
 
