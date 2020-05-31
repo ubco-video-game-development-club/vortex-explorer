@@ -34,7 +34,6 @@ public class Vortex : MonoBehaviour
             // pull the target towards the vortex
             pullTarget.Pull(pullDirection * pullEffect);
 
-            Debug.Log(pullEffect);
             // crush the object if it gets too close and the vortex is big enough
             if (pullEffect > forceThreshold && radius > radiusThreshold) {
                 // if the target is the player
