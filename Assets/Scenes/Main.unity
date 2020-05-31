@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 85818475}
   - component: {fileID: 85818474}
   - component: {fileID: 85818476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DeathWallBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5092,7 +5092,7 @@ GameObject:
   - component: {fileID: 562664391}
   - component: {fileID: 562664390}
   - component: {fileID: 562664392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DeathWallTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5187,7 +5187,7 @@ GameObject:
   - component: {fileID: 936368993}
   - component: {fileID: 936368992}
   - component: {fileID: 936368994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5421,10 +5421,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vortexPrefab: {fileID: 7837351958441014139, guid: 339be223d8167f0418010714167687f7,
     type: 3}
+  vortexIndicatorPrefab: {fileID: 3712193014466827350, guid: 65c4224fe8596e44a947add917406c24,
+    type: 3}
+  vortexTargetLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  vortexBaseRadius: 0.5
+  vortexRadiusGrowthRate: 0.5
+  vortexBaseInnerStrength: 5
+  vortexBaseOuterStrength: 1
+  vortexInnerStrengthGrowthRate: 5
+  vortexOuterStrengthGrowthRate: 1
   vortexCooldown: 0.2
-  vortexBuildTime: 1
-  minVortexPower: 1
-  maxVortexPower: 4
+  vortexBuildTime: 1.2
+  vortexMinScale: 1
+  vortexMaxScale: 4
+  vortexCrushForceThreshold: 13
+  vortexCrushRadiusThreshold: 1.2
+  vortexRegularIndicatorColor: {r: 1, g: 0.92855203, b: 0, a: 1}
+  vortexCrushIndicatorColor: {r: 1, g: 0.23941566, b: 0.15686274, a: 1}
 --- !u!4 &1353091912
 Transform:
   m_ObjectHideFlags: 0
@@ -5685,7 +5700,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
