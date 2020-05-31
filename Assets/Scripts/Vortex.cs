@@ -45,6 +45,11 @@ public class Vortex : MonoBehaviour
                 target.GetComponent<PullTarget>().Crush(transform.position);
             }
         }
+        if (player.transform.position.x - this.transform.position.x > 20) {
+            Destroy(this.gameObject);
+        }
+
+
     }
 
     public void Activate(float powerLevel) {
