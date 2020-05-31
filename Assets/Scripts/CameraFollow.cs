@@ -19,6 +19,10 @@ public class CameraFollow : MonoBehaviour
     }
 
     void FixedUpdate() {
+        if (player == null) {
+            return;
+        }
+
         // get the player's x position value
         float playerX = player.transform.position.x;
 

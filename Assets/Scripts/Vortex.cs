@@ -4,52 +4,50 @@ using UnityEngine;
 
 public class Vortex : MonoBehaviour
 {
-    public float destroyDistance = 0.3f;
+    public float forceThreshold = 0.3f;
+    public float radiusThreshold = 2f;
     public float baseRadius = 0.5f;
     public float baseInnerStrength = 2f;
     public float baseOuterStrength = 1f;
 
-    private Player player;
     private float radius;
     private float innerStrength;
     private float outerStrength;
-
-    void Start() {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    }
 
     void FixedUpdate() {
         // get all nearby physics objects
         Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius);
 
         foreach (Collider2D target in targets) {
+            PullTarget pullTarget = target.GetComponent<PullTarget>();
+
             // get the direction from the target to the vortex
-            Vector2 pullDirection = transform.position - target.transform.position;
+            Vector2 pullDirection = transform.position - pullTarget.transform.position;
 
             // get the distance from the target to the vortex
-            float targetDistance = Vector2.Distance(transform.position, target.transform.position);
+            float targetDistance = Vector2.Distance(transform.position, pullTarget.transform.position);
 
             // calculate the effect of the pull based on the distance
-            float distanceScale = (targetDistance - destroyDistance) / (radius - destroyDistance);
+            float distanceScale = targetDistance / radius;
             float pullEffect = Mathf.Lerp(innerStrength, outerStrength, distanceScale);
 
             // pull the target towards the vortex
-            target.GetComponent<Rigidbody2D>().AddForce(pullDirection * pullEffect, ForceMode2D.Force);
+            pullTarget.Pull(pullDirection * pullEffect);
 
-            // crush the object if it gets too close
-            if (targetDistance < destroyDistance) {
+            Debug.Log(pullEffect);
+            // crush the object if it gets too close and the vortex is big enough
+            if (pullEffect > forceThreshold && radius > radiusThreshold) {
+                // if the target is the player
                 Player p;
-                if (target.TryGetComponent<Player>(out p)) {
+                if (pullTarget.TryGetComponent<Player>(out p)) {
+                    // disable the player's movement
                     p.DisableMovement();
                 }
-                target.GetComponent<PullTarget>().Crush(transform.position);
+
+                // crush the target
+                pullTarget.Crush(transform.position);
             }
         }
-        if (player.transform.position.x - this.transform.position.x > 20) {
-            Destroy(this.gameObject);
-        }
-
-
     }
 
     public void Activate(float powerLevel) {

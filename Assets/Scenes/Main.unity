@@ -5232,7 +5232,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -388133945
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8063512790398084267, guid: e0f2be8e7c3841747a93cf09cd7b3068,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5320,7 +5320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583b8a74e04abed47b8501f6ab2856bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  initialSpeed: 3
+  minSpeed: 3
+  maxSpeed: 4
 --- !u!95 &936368993
 Animator:
   serializedVersion: 3
@@ -5352,6 +5354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e440fd438c4f8498ff88d060f74d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crushDuration: 1
 --- !u!1 &1063240043
 GameObject:
   m_ObjectHideFlags: 0
@@ -5418,10 +5421,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vortexPrefab: {fileID: 7837351958441014139, guid: 339be223d8167f0418010714167687f7,
     type: 3}
-  vortexCooldown: 1
+  vortexCooldown: 0.2
   vortexBuildTime: 1
   minVortexPower: 1
-  maxVortexPower: 5
+  maxVortexPower: 4
 --- !u!4 &1353091912
 Transform:
   m_ObjectHideFlags: 0
