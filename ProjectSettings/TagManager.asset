@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Vortex
+  - DeathWall
+  - Asteroid
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Main
     uniqueID: 3906833351
+    locked: 0
+  - name: UI
+    uniqueID: 3084082635
     locked: 0

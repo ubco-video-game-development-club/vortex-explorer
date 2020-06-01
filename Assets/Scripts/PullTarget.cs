@@ -16,15 +16,15 @@ public class PullTarget : MonoBehaviour
 
     public void Pull(Vector2 force) {
         if (!isBeingCrushed) {
-            GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Force);
+            rb2D.AddForce(force, ForceMode2D.Force);
         }
     }
 
     public void Crush(Vector2 centerPoint) {
         if (!isBeingCrushed) {
             isBeingCrushed = true;
-            // stop the current velocity
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            // stop all physics movement
+            rb2D.constraints = RigidbodyConstraints2D.FreezePosition;
             // run a timed function that will pull the object towards the target point over a certain amount of time
             StartCoroutine(PullToCenter(centerPoint));
         }
@@ -50,6 +50,12 @@ public class PullTarget : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject);
+        // destroy this gameobject or end the game if this is the player
+        Player player;
+        if (TryGetComponent<Player>(out player)) {
+            GameController.instance.LoseGame();
+        } else {
+            Destroy(gameObject);
+        }
     }
 }

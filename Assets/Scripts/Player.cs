@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public float minSpeed = 2f;
     public float maxSpeed = 4f;
 
-    private bool canMove;
     private Rigidbody2D rb2D;
 
     void Awake() {
@@ -17,8 +16,6 @@ public class Player : MonoBehaviour
     }
 
     void Start() {
-        canMove = true;
-
         // give the player some initial velocity to the right
         rb2D.AddForce(Vector2.right * initialSpeed, ForceMode2D.Impulse);
     }
@@ -27,12 +24,13 @@ public class Player : MonoBehaviour
         // die if the player goes too far back to the left
         float boundX = Camera.main.ScreenToWorldPoint(Vector3.zero).x;
         if (transform.position.x + transform.localScale.x < boundX) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameController.instance.LoseGame();
         }
     }
 
     void FixedUpdate() {
-        if (!canMove) {
+        // do not update physics if the rigidbody position is frozen
+        if ((rb2D.constraints & RigidbodyConstraints2D.FreezePosition) > 0) {
             return;
         }
 
@@ -45,9 +43,5 @@ public class Player : MonoBehaviour
         // lock the player's velocity to the set speed
         float speed = Mathf.Clamp(rb2D.velocity.magnitude, minSpeed, maxSpeed);
         rb2D.velocity = dir * speed;
-    }
-
-    public void DisableMovement() {
-        canMove = false;
     }
 }

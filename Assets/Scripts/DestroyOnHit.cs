@@ -8,9 +8,9 @@ public class DestroyOnHit : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col) {
         Player player;
         if (col.TryGetComponent<Player>(out player)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameController.instance.LoseGame();
         } else {
-            Destroy(gameObject);
+            Destroy(col.gameObject);
         }
     }
 }
