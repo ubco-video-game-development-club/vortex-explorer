@@ -5425,7 +5425,7 @@ MonoBehaviour:
     type: 3}
   vortexTargetLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   vortexBaseRadius: 0.5
   vortexRadiusGrowthRate: 0.5
   vortexBaseInnerStrength: 5
@@ -5440,6 +5440,10 @@ MonoBehaviour:
   vortexCrushRadiusThreshold: 1.2
   vortexRegularIndicatorColor: {r: 1, g: 0.92855203, b: 0, a: 1}
   vortexCrushIndicatorColor: {r: 1, g: 0.23941566, b: 0.15686274, a: 1}
+  asteroidsPrefab: {fileID: 1511844395636421670, guid: 164866732eceb5e43b2313f6afd65c42,
+    type: 3}
+  asteroidSpawnFrequency: 200
+  asteroidSpawnCounter: 0
 --- !u!4 &1353091912
 Transform:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     public Color vortexRegularIndicatorColor;
     [Tooltip("The color of the indicator when the vortex radius is greater than the crush radius threshold.")]
     public Color vortexCrushIndicatorColor;
+    [Header("Asteroid Settings")]
     public Asteroids asteroidsPrefab;
     public int asteroidSpawnFrequency = 200;
     public int asteroidSpawnCounter = 0;
@@ -46,9 +47,6 @@ public class GameController : MonoBehaviour
     private bool isBuildingVortex;
     private float vortexScaleProgress;
     private SpriteRenderer vortexIndicator;
-
-    public float minVortexPower = 1f;
-    public float maxVortexPower = 3f;
 
     void Start() {
         // spawn the vortex indicator and disable it
