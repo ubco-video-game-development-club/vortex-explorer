@@ -5007,7 +5007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb3e11f51033014db34e9bcd00b21ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBound: -10
+  leftBound: -15
   rightBound: 0
   followTime: 0.1
 --- !u!20 &519420031
