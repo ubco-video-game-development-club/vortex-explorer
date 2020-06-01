@@ -3,6 +3,8 @@
 
 Download the game [here](https://github.com/ubco-video-game-development-club/vortex-explorer/releases/tag/v1.0).
 
+![Vortex Explorer gameplay](VortexExplorerGameplay.gif)
+
 ## Contributors
 *Gameplay by Jaden Balogh and Ren Lin*
 
