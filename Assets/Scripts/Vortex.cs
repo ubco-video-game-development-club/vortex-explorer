@@ -34,15 +34,6 @@ public class Vortex : MonoBehaviour
 
                 // crush the object if it gets too close and the vortex is big enough
                 if (pullEffect > forceThreshold && radius > radiusThreshold) {
-                    Debug.Log("Oof");
-
-                    // if the target is the player
-                    Player p;
-                    if (pullTarget.TryGetComponent<Player>(out p)) {
-                        // disable the player's movement
-                        p.DisableMovement();
-                    }
-
                     // crush the target
                     pullTarget.Crush(transform.position);
                 }

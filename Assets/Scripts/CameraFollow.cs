@@ -11,34 +11,34 @@ public class CameraFollow : MonoBehaviour
     [Tooltip("Time it takes to move to the player's current position.")]
     public float followTime = 0.1f;
 
-    private Player player;
+    private Transform target;
     private Vector2 currentVelocity;
 
-    void Start() {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    public void Follow(Transform target) {
+        this.target = target;
     }
 
     void FixedUpdate() {
-        if (player == null) {
+        if (target == null) {
             return;
         }
 
         // get the player's x position value
-        float playerX = player.transform.position.x;
+        float targetX = target.position.x;
 
         // store the current target to move towards
-        Vector2 target = transform.position;
+        Vector2 targetPos = transform.position;
 
-        // determine whether to follow the player based on bounds
-        float distToPlayerX = playerX - transform.position.x;
+        // determine whether to follow the target based on bounds
+        float distToPlayerX = targetX - transform.position.x;
         if (distToPlayerX < leftBound) {
-            target = (playerX - leftBound) * Vector2.right;
+            targetPos = (targetX - leftBound) * Vector2.right;
         } else if (distToPlayerX > rightBound) {
-            target = (playerX - rightBound) * Vector2.right;
+            targetPos = (targetX - rightBound) * Vector2.right;
         }
 
         // move the camera towards the current target
-        Vector3 movement = Vector2.SmoothDamp(transform.position, target, ref currentVelocity, followTime);
+        Vector3 movement = Vector2.SmoothDamp(transform.position, targetPos, ref currentVelocity, followTime);
 
         // maintain the camera's current z offset
         Vector3 zOffset = transform.position.z * Vector3.forward;

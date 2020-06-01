@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+
+    [Header("Game Settings")]
+    public Player playerPrefab;
+    public Vector2 playerSpawn;
+    public float gameLength = 30f;
+    public float startDelay = 5f;
+    public float winDelay = 5f;
+
     [Header("Vortex Settings")]
     public Vortex vortexPrefab;
     public SpriteRenderer vortexIndicatorPrefab;
@@ -37,33 +46,118 @@ public class GameController : MonoBehaviour
     public Color vortexRegularIndicatorColor;
     [Tooltip("The color of the indicator when the vortex radius is greater than the crush radius threshold.")]
     public Color vortexCrushIndicatorColor;
-    [Header("Asteroid Settings")]
-    public Asteroids asteroidsPrefab;
-    public int asteroidSpawnFrequency = 200;
-    public int asteroidSpawnCounter = 0;
 
+    [Header("Asteroid Settings")]
+    public Asteroid asteroidPrefab;
+    [Tooltip("Minimum number of seconds between each asteroid spawning.")]
+    public float asteroidMinSpawnInterval = 1f;
+    [Tooltip("Maximum number of seconds between each asteroid spawning.")]
+    public float asteroidMaxSpawnInterval = 2f;
+    [Tooltip("Minimum speed of the asteroids when they spawn.")]
+    public float asteroidMinSpeed = 1f;
+    [Tooltip("Maximum speed of the asteroids when they spawn.")]
+    public float asteroidMaxSpeed = 2f;
+
+    private Player player;
+    private Transform spawnParent;
     private bool canSpawnVortex;
-    private bool canSpawnAsteroids;
     private bool isBuildingVortex;
+    private bool isSpawningAsteroids;
+    private bool isGameActive;
     private float vortexScaleProgress;
     private SpriteRenderer vortexIndicator;
 
-    void Start() {
+    void Awake() {
+        // reinforce a singleton pattern for this object
+        if (instance != null) {
+            Destroy(gameObject);
+        } else {
+            instance = this;
+        }
+
         // spawn the vortex indicator and disable it
         vortexIndicator = Instantiate(vortexIndicatorPrefab);
         vortexIndicator.enabled = false;
-
-        canSpawnVortex = true;
-        canSpawnAsteroids = true;
     }
 
     void Update() {
         // upon pressing spacebar
         if (Input.GetKeyDown(KeyCode.Space)) {
             // reload the current level
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            ResetGame();
         }
 
+        // upon pressing escape
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            // go to main menu
+            MainMenu();
+        }
+
+        // helper function to handle click input relating to vortex placement
+        HandleVortexInput();
+    }
+
+    public void StartGame() {
+        // create the spawn parent transform
+        if (spawnParent != null) {
+            Destroy(spawnParent.gameObject);
+        }
+        spawnParent = new GameObject("SpawnedObjects").transform;
+
+        // spawn the player
+        player = Instantiate(playerPrefab, playerSpawn, Quaternion.identity, spawnParent);
+
+        // set the camera to follow the player
+        Camera.main.GetComponent<CameraFollow>().Follow(player.transform);
+
+        // start the game loop coroutine
+        StartCoroutine(HandleGameTimer());
+    }
+
+    public void StopGame() {
+        // reset the camera position
+        Camera.main.GetComponent<CameraFollow>().Follow(null);
+        Camera.main.transform.position = Vector3.forward * Camera.main.transform.position.z;
+
+        // despawn all spawned objects
+        if (spawnParent != null) {
+            Destroy(spawnParent.gameObject);
+        }
+        spawnParent = null;
+        player = null;
+
+        // disable vortex placement inputs
+        canSpawnVortex = false;
+        vortexIndicator.enabled = false;
+        vortexScaleProgress = 0;
+
+        // stop the game loop coroutines
+        StopAllCoroutines();
+    }
+
+    public void LoseGame() {
+        StopGame();
+        HUD.instance.OpenLoseMenu();
+    }
+
+    public void WinGame() {
+        StopGame();
+        HUD.instance.OpenWinMenu();
+    }
+
+    public void ResetGame() {
+        StopGame();
+        HUD.instance.CloseHUD();
+        StartGame();
+    }
+
+    public void MainMenu() {
+        StopGame();
+        HUD.instance.CloseHUD();
+        HUD.instance.OpenMainMenu();
+    }
+
+    private void HandleVortexInput() {
         // upon pressing the left-click button
         if (Input.GetButtonDown("Fire1") && canSpawnVortex) {
             // enable the visual indicator
@@ -98,7 +192,7 @@ public class GameController : MonoBehaviour
         // upon releasing the left-click button
         if (Input.GetButtonUp("Fire1") && canSpawnVortex && isBuildingVortex) {
             // start the vortex spawn cooldown
-            StartCoroutine(SpawnVortexCooldown());
+            StartCoroutine(HandleVortexCooldown());
 
             // stop building the vortex scale
             isBuildingVortex = false;
@@ -110,15 +204,13 @@ public class GameController : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             // spawn a new vortex object at the mouse position
-            Vortex vortex = Instantiate(vortexPrefab, mousePos, Quaternion.identity);
+            Vortex vortex = Instantiate(vortexPrefab, mousePos, Quaternion.identity, spawnParent);
 
             // calculate the vortex stats based on the current vortex scale
             float vortexScale = Mathf.Lerp(vortexMinScale, vortexMaxScale, vortexScaleProgress / vortexBuildTime) - 1;
             float radius = vortexBaseRadius + vortexRadiusGrowthRate * vortexScale;
             float innerStrength = vortexBaseInnerStrength + vortexInnerStrengthGrowthRate * vortexScale;
             float outerStrength = vortexBaseOuterStrength + vortexOuterStrengthGrowthRate * vortexScale;
-
-            Debug.Log(innerStrength + ", " + outerStrength);
 
             // activate the vortex at the current vortex scale
             vortex.Activate(radius, innerStrength, outerStrength, vortexCrushForceThreshold, vortexCrushRadiusThreshold, vortexTargetLayers);
@@ -138,19 +230,53 @@ public class GameController : MonoBehaviour
             // reset the scale progress
             vortexScaleProgress = 0;
         }
-
-        //SpawnAsteroids
-        asteroidSpawnCounter++;
-        if (asteroidSpawnCounter % asteroidSpawnFrequency == 0) {
-            //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            Asteroids asteroid = Instantiate(asteroidsPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-            asteroid.transform.position = new Vector3(asteroid.transform.position.x+20, asteroid.transform.position.y, 0); 
-        }
     }
 
-    private IEnumerator SpawnVortexCooldown() {
+    private IEnumerator HandleVortexCooldown() {
         canSpawnVortex = false;
         yield return new WaitForSeconds(vortexCooldown);
         canSpawnVortex = true;
+    }
+
+    private IEnumerator HandleGameTimer() {
+        // wait before starting the asteroid waves and allowing vortex inputs
+        yield return new WaitForSeconds(startDelay);
+        StartCoroutine(SpawnAsteroids());
+        canSpawnVortex = true;
+
+        // disable asteroid waves after the game is over
+        yield return new WaitForSeconds(gameLength);
+        isSpawningAsteroids = false;
+
+        // after a short delay open the win menu
+        yield return new WaitForSeconds(winDelay);
+        WinGame();
+    }
+
+    private IEnumerator SpawnAsteroids() {
+        // calculate the range of y positions the asteroids could spawn at
+        float topY = Camera.main.ScreenToWorldPoint(Vector3.up * Screen.height * 0.9f).y;
+        float bottomY = Camera.main.ScreenToWorldPoint(Vector3.up * Screen.height * 0.1f).y;
+
+        // spawn asteroids on a random repeating interval
+        isSpawningAsteroids = true;
+        while (isSpawningAsteroids) {
+            // get the x position directly to the right of the screen
+            float spawnX = Camera.main.ScreenToWorldPoint(Vector3.right * Screen.width).x + 1f;
+
+            // choose a random y spawn location
+            float spawnY = Random.Range(bottomY, topY);
+
+            // spawn an asteroid
+            Asteroid asteroid = Instantiate(asteroidPrefab, new Vector2(spawnX, spawnY), Quaternion.identity, spawnParent);
+
+            // apply a random initial force to the asteroid
+            float speed = Random.Range(asteroidMinSpeed, asteroidMaxSpeed);
+            asteroid.Push(Vector2.left * speed);
+
+            // wait a random interval before spawning the next asteroid
+            float spawnInterval = Random.Range(asteroidMinSpawnInterval, asteroidMaxSpawnInterval);
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 }
