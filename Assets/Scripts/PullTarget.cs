@@ -27,6 +27,11 @@ public class PullTarget : MonoBehaviour
             rb2D.constraints = RigidbodyConstraints2D.FreezePosition;
             // run a timed function that will pull the object towards the target point over a certain amount of time
             StartCoroutine(PullToCenter(centerPoint));
+            // add points if this is an asteroid
+            Asteroid asteroid;
+            if (TryGetComponent<Asteroid>(out asteroid)) {
+                GameController.instance.AddVortexCrushPoints();
+            }
         }
     }
 

@@ -6419,10 +6419,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5465509131583075431, guid: 9797c7ab2910d934d97055f2d42c99ab,
     type: 3}
-  playerSpawn: {x: -10, y: 0}
+  isTimed: 0
   gameLength: 30
   startDelay: 5
   winDelay: 5
+  pointsPerAsteroid: 10
+  pointsPerVortexCrush: 20
   vortexPrefab: {fileID: 7837351958441014139, guid: 339be223d8167f0418010714167687f7,
     type: 3}
   vortexIndicatorPrefab: {fileID: 3712193014466827350, guid: 65c4224fe8596e44a947add917406c24,
@@ -6449,7 +6451,7 @@ MonoBehaviour:
   asteroidMinSpawnInterval: 0.25
   asteroidMaxSpawnInterval: 0.75
   asteroidMinSpeed: 1.2
-  asteroidMaxSpeed: 2.4
+  asteroidMaxSpeed: 2
 --- !u!4 &1353091912
 Transform:
   m_ObjectHideFlags: 0
@@ -6605,6 +6607,100 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377808208}
   m_CullTransparentMesh: 0
+--- !u!1 &1433079305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433079306}
+  - component: {fileID: 1433079308}
+  - component: {fileID: 1433079307}
+  - component: {fileID: 1433079309}
+  m_Layer: 5
+  m_Name: ScoreText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1433079306
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433079305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1775124682}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -20, y: -10}
+  m_SizeDelta: {x: 300, y: 30}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &1433079307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433079305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6a5bb34a50e29ed4ebc1f074897b2110, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 5
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Score: 100'
+--- !u!222 &1433079308
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433079305}
+  m_CullTransparentMesh: 0
+--- !u!114 &1433079309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433079305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1472239013
 GameObject:
   m_ObjectHideFlags: 0
@@ -11534,6 +11630,7 @@ RectTransform:
   - {fileID: 1194089647}
   - {fileID: 1811842451}
   - {fileID: 638956659}
+  - {fileID: 1433079306}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11557,6 +11654,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1194089648}
   loseMenu: {fileID: 1811842452}
   winMenu: {fileID: 638956660}
+  scoreText: {fileID: 1433079307}
   fadeTime: 1
 --- !u!1 &1811842450
 GameObject:
