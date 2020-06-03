@@ -115,7 +115,8 @@ public class GameController : MonoBehaviour
         spawnParent = new GameObject("SpawnedObjects").transform;
 
         // spawn the player
-        player = Instantiate(playerPrefab, playerSpawn, Quaternion.identity, spawnParent);
+        Vector2 spawnPos = (Camera.main.ScreenToWorldPoint(Vector2.zero).x + 1.5f) * Vector2.right;
+        player = Instantiate(playerPrefab, spawnPos, Quaternion.identity, spawnParent);
 
         // set the camera to follow the player
         Camera.main.GetComponent<CameraFollow>().Follow(player.transform);
