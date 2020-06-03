@@ -9,9 +9,12 @@ public class GameController : MonoBehaviour
 
     [Header("Game Settings")]
     public Player playerPrefab;
+    public bool isTimed = false;
     public float gameLength = 30f;
     public float startDelay = 5f;
     public float winDelay = 5f;
+    public int pointsPerAsteroid = 10;
+    public int pointsPerVortexCrush = 20;
 
     [Header("Vortex Settings")]
     public Vortex vortexPrefab;
@@ -63,6 +66,7 @@ public class GameController : MonoBehaviour
     private bool isBuildingVortex;
     private bool isSpawningAsteroids;
     private bool isGameActive;
+    private int score;
     private float vortexScaleProgress;
     private SpriteRenderer vortexIndicator;
 
@@ -77,6 +81,13 @@ public class GameController : MonoBehaviour
         // spawn the vortex indicator and disable it
         vortexIndicator = Instantiate(vortexIndicatorPrefab);
         vortexIndicator.enabled = false;
+    }
+
+    void Start() {
+        // initialize the score
+        score = 0;
+        HUD.instance.SetScore(score);
+        HUD.instance.ShowScore(false);
     }
 
     void Update() {
@@ -110,8 +121,17 @@ public class GameController : MonoBehaviour
         // set the camera to follow the player
         Camera.main.GetComponent<CameraFollow>().Follow(player.transform);
 
+        // reset the score
+        score = 0;
+        HUD.instance.SetScore(score);
+        HUD.instance.ShowScore(true);
+
         // start the game loop coroutine
-        StartCoroutine(HandleGameTimer());
+        if (isTimed) {
+            StartCoroutine(TimedGameLoop());
+        } else {
+            StartCoroutine(InfiniteGameLoop());
+        }
     }
 
     public void StopGame() {
@@ -153,8 +173,19 @@ public class GameController : MonoBehaviour
 
     public void MainMenu() {
         StopGame();
+        HUD.instance.ShowScore(false);
         HUD.instance.CloseHUD();
         HUD.instance.OpenMainMenu();
+    }
+
+    public void AddVortexCrushPoints() {
+        score += pointsPerVortexCrush;
+        HUD.instance.SetScore(score);
+    }
+
+    public void AddAsteroidPoints() {
+        score += pointsPerAsteroid;
+        HUD.instance.SetScore(score);
     }
 
     private void HandleVortexInput() {
@@ -238,7 +269,7 @@ public class GameController : MonoBehaviour
         canSpawnVortex = true;
     }
 
-    private IEnumerator HandleGameTimer() {
+    private IEnumerator TimedGameLoop() {
         // wait before starting the asteroid waves and allowing vortex inputs
         yield return new WaitForSeconds(startDelay);
         StartCoroutine(SpawnAsteroids());
@@ -251,6 +282,13 @@ public class GameController : MonoBehaviour
         // after a short delay open the win menu
         yield return new WaitForSeconds(winDelay);
         WinGame();
+    }
+
+    private IEnumerator InfiniteGameLoop() {
+        // wait before starting the asteroid waves and allowing vortex inputs
+        yield return new WaitForSeconds(startDelay);
+        StartCoroutine(SpawnAsteroids());
+        canSpawnVortex = true;
     }
 
     private IEnumerator SpawnAsteroids() {

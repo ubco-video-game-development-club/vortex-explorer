@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class HUD : MonoBehaviour
     public CanvasGroup mainMenu;
     public CanvasGroup loseMenu;
     public CanvasGroup winMenu;
+    public Text scoreText;
     public float fadeTime = 0.2f;
 
     void Awake() {
@@ -36,6 +38,14 @@ public class HUD : MonoBehaviour
         EnableMenu(mainMenu, false);
         EnableMenu(loseMenu, false);
         EnableMenu(winMenu, false);
+    }
+
+    public void ShowScore(bool show) {
+        scoreText.enabled = show;
+    }
+
+    public void SetScore(int score) {
+        scoreText.text = "Score: " + score;
     }
 
     private void EnableMenu(CanvasGroup menu, bool enabled) {
