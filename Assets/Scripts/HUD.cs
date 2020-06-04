@@ -10,6 +10,7 @@ public class HUD : MonoBehaviour
     public CanvasGroup mainMenu;
     public CanvasGroup loseMenu;
     public CanvasGroup winMenu;
+    public CanvasGroup mainMenuButton;
     public Text scoreText;
     public float fadeTime = 0.2f;
 
@@ -38,6 +39,10 @@ public class HUD : MonoBehaviour
         EnableMenu(mainMenu, false);
         EnableMenu(loseMenu, false);
         EnableMenu(winMenu, false);
+    }
+
+    public void ShowMainMenuButton(bool show) {
+        mainMenuButton.alpha = show ? 1 : 0;
     }
 
     public void ShowScore(bool show) {

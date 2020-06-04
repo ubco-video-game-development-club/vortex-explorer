@@ -88,6 +88,9 @@ public class GameController : MonoBehaviour
         score = 0;
         HUD.instance.SetScore(score);
         HUD.instance.ShowScore(false);
+        
+        // hide the main menu button
+        HUD.instance.ShowMainMenuButton(false);
     }
 
     void Update() {
@@ -125,6 +128,9 @@ public class GameController : MonoBehaviour
         score = 0;
         HUD.instance.SetScore(score);
         HUD.instance.ShowScore(true);
+
+        // show the main menu button
+        HUD.instance.ShowMainMenuButton(true);
 
         // start the game loop coroutine
         if (isTimed) {
@@ -174,6 +180,7 @@ public class GameController : MonoBehaviour
     public void MainMenu() {
         StopGame();
         HUD.instance.ShowScore(false);
+        HUD.instance.ShowMainMenuButton(false);
         HUD.instance.CloseHUD();
         HUD.instance.OpenMainMenu();
     }
