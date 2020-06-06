@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public class GameController : MonoBehaviour
 {
@@ -156,6 +158,10 @@ public class GameController : MonoBehaviour
         canSpawnVortex = false;
         vortexIndicator.enabled = false;
         vortexScaleProgress = 0;
+
+        // save the current score in Google Play
+        Social.ReportScore(score, "CgkImvWcv6cMEAIQAQ", success => {});
+        Social.ShowLeaderboardUI();
 
         // stop the game loop coroutines
         StopAllCoroutines();
