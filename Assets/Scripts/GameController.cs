@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 
 public class GameController : MonoBehaviour
@@ -79,6 +80,14 @@ public class GameController : MonoBehaviour
         } else {
             instance = this;
         }
+
+        // activate the Google Play platform
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+        PlayGamesPlatform.InitializeInstance(config);
+        PlayGamesPlatform.Activate();
+        Social.localUser.Authenticate(success => {
+            Debug.Log("auth: " + success);
+        });
 
         // spawn the vortex indicator and disable it
         vortexIndicator = Instantiate(vortexIndicatorPrefab);
