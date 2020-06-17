@@ -86,7 +86,7 @@ public class GameController : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
         Social.localUser.Authenticate(success => {
-            Debug.Log("auth: " + success);
+            HUD.instance.PrintDebug("auth success: " + success);
         });
 
         // spawn the vortex indicator and disable it

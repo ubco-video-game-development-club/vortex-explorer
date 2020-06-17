@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
     public CanvasGroup winMenu;
     public CanvasGroup mainMenuButton;
     public Text scoreText;
+    public Text debugText;
     public float fadeTime = 0.2f;
 
     void Awake() {
@@ -51,6 +52,10 @@ public class HUD : MonoBehaviour
 
     public void SetScore(int score) {
         scoreText.text = "Score: " + score;
+    }
+
+    public void PrintDebug(string debugString) {
+        debugText.text = debugString;
     }
 
     private void EnableMenu(CanvasGroup menu, bool enabled) {
