@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using UnityEngine.SocialPlatforms;
 
 public class GameController : MonoBehaviour
 {
@@ -81,14 +80,6 @@ public class GameController : MonoBehaviour
             instance = this;
         }
 
-        // activate the Google Play platform
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
-        PlayGamesPlatform.InitializeInstance(config);
-        PlayGamesPlatform.Activate();
-        Social.localUser.Authenticate(success => {
-            HUD.instance.PrintDebug("auth success: " + success);
-        });
-
         // spawn the vortex indicator and disable it
         vortexIndicator = Instantiate(vortexIndicatorPrefab);
         vortexIndicator.enabled = false;
@@ -102,6 +93,14 @@ public class GameController : MonoBehaviour
         
         // hide the main menu button
         HUD.instance.ShowMainMenuButton(false);
+
+        // activate the Google Play platform
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+        PlayGamesPlatform.InitializeInstance(config);
+        PlayGamesPlatform.Activate();
+        PlayGamesPlatform.Instance.Authenticate(success => {
+            HUD.instance.PrintDebug("Auth success: " + success);
+        });
     }
 
     void Update() {
@@ -169,8 +168,10 @@ public class GameController : MonoBehaviour
         vortexScaleProgress = 0;
 
         // save the current score in Google Play
-        Social.ReportScore(score, "CgkImvWcv6cMEAIQAQ", success => {});
-        Social.ShowLeaderboardUI();
+        PlayGamesPlatform.Instance.ReportScore(score, LeaderboardManager.leaderboard_top_scores, success => {
+            HUD.instance.PrintDebug("Score added: " + success);
+        });
+        PlayGamesPlatform.Instance.ShowLeaderboardUI();
 
         // stop the game loop coroutines
         StopAllCoroutines();

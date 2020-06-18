@@ -24,7 +24,7 @@
 
 public static class LeaderboardManager
 {
-        public const string leaderboard_top_scores = "CgkImvWcv6cMEAIQAQ"; // <GPGSID>
+        public const string leaderboard_top_scores = "CgkIoo6A8vMYEAIQAQ"; // <GPGSID>
 
 }
 
