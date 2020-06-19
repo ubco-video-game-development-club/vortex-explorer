@@ -8,6 +8,7 @@ public class HUD : MonoBehaviour
     public static HUD instance;
 
     public CanvasGroup mainMenu;
+    public CanvasGroup tutorialMenu;
     public CanvasGroup loseMenu;
     public CanvasGroup winMenu;
     public CanvasGroup mainMenuButton;
@@ -28,6 +29,10 @@ public class HUD : MonoBehaviour
         EnableMenu(mainMenu, true);
     }
 
+    public void OpenTutorialMenu() {
+        EnableMenu(tutorialMenu, true);
+    }
+
     public void OpenLoseMenu() {
         EnableMenu(loseMenu, true);
     }
@@ -38,6 +43,7 @@ public class HUD : MonoBehaviour
 
     public void CloseHUD() {
         EnableMenu(mainMenu, false);
+        EnableMenu(tutorialMenu, false);
         EnableMenu(loseMenu, false);
         EnableMenu(winMenu, false);
     }

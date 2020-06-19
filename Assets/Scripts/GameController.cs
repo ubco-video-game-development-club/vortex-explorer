@@ -204,6 +204,12 @@ public class GameController : MonoBehaviour
         HUD.instance.OpenMainMenu();
     }
 
+    public void OpenTutorial() {
+        HUD.instance.ShowMainMenuButton(true);
+        HUD.instance.CloseHUD();
+        HUD.instance.OpenTutorialMenu();
+    }
+
     public void ViewLeaderboards() {
         PlayGamesPlatform.Instance.ShowLeaderboardUI();
     }
