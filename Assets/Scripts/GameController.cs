@@ -204,6 +204,10 @@ public class GameController : MonoBehaviour
         HUD.instance.OpenMainMenu();
     }
 
+    public void ViewLeaderboards() {
+        PlayGamesPlatform.Instance.ShowLeaderboardUI();
+    }
+
     public void AddVortexCrushPoints() {
         score += pointsPerVortexCrush;
         HUD.instance.SetScore(score);
