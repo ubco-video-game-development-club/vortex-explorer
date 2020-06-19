@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 
@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     public float winDelay = 5f;
     public int pointsPerAsteroid = 10;
     public int pointsPerVortexCrush = 20;
+
+    [Header("Ad Settings")]
+    public int adInterval = 3;
 
     [Header("Vortex Settings")]
     public Vortex vortexPrefab;
@@ -71,6 +74,7 @@ public class GameController : MonoBehaviour
     private int score;
     private float vortexScaleProgress;
     private SpriteRenderer vortexIndicator;
+    private int loseCount;
 
     void Awake() {
         // reinforce a singleton pattern for this object
@@ -98,9 +102,10 @@ public class GameController : MonoBehaviour
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
-        PlayGamesPlatform.Instance.Authenticate(success => {
-            HUD.instance.PrintDebug("Auth success: " + success);
-        });
+        PlayGamesPlatform.Instance.Authenticate(success => {});
+
+        // initialize ads
+        Advertisement.Initialize("3665661", true);
     }
 
     void Update() {
@@ -168,10 +173,7 @@ public class GameController : MonoBehaviour
         vortexScaleProgress = 0;
 
         // save the current score in Google Play
-        PlayGamesPlatform.Instance.ReportScore(score, LeaderboardManager.leaderboard_top_scores, success => {
-            HUD.instance.PrintDebug("Score added: " + success);
-        });
-        PlayGamesPlatform.Instance.ShowLeaderboardUI();
+        PlayGamesPlatform.Instance.ReportScore(score, LeaderboardManager.leaderboard_top_scores, success => {});
 
         // stop the game loop coroutines
         StopAllCoroutines();
@@ -180,6 +182,7 @@ public class GameController : MonoBehaviour
     public void LoseGame() {
         StopGame();
         HUD.instance.OpenLoseMenu();
+        PlayAds();
     }
 
     public void WinGame() {
@@ -209,6 +212,14 @@ public class GameController : MonoBehaviour
     public void AddAsteroidPoints() {
         score += pointsPerAsteroid;
         HUD.instance.SetScore(score);
+    }
+
+    private void PlayAds() {
+        loseCount++;
+        if (loseCount >= adInterval) {
+            loseCount = 0;
+            Advertisement.Show("GameOver");
+        }
     }
 
     private void HandleVortexInput() {
