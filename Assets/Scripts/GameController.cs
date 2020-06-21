@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
 
     [Header("Ad Settings")]
     public int adInterval = 3;
+    public bool useDebugAds = false;
 
     [Header("Vortex Settings")]
     public Vortex vortexPrefab;
@@ -105,7 +106,7 @@ public class GameController : MonoBehaviour
         PlayGamesPlatform.Instance.Authenticate(success => {});
 
         // initialize ads
-        Advertisement.Initialize("3665661", true);
+        Advertisement.Initialize("3665661", useDebugAds);
     }
 
     void Update() {
